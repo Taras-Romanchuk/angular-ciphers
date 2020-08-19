@@ -4,20 +4,22 @@
   </h1>
 </div>
 
-<form (ngSubmit)="encrypt(form.value)" #form="ngForm" autocomplete="off">
-  <div>
-    <label for="inputText">Input Text (English lowercase only):</label>
-    <input type="text" [(ngModel)]="inputText" name="inputText" id="inputText" pattern="[a-z]" placeholder="Input Text...">
-  </div>
-  <div>
-    <label for="shift">Shift (0-26):</label>
-    <input type="number" [(ngModel)]="shift" name="shift" id="shift" placeholder="Shift..." min="0" max="26">
-  </div>
-  <button type="submit">Encrypt</button>
-  <div>
-    <label for="outputText">Output Text:</label>
-    <input type="text" [(ngModel)]="outputText" name="outputText" id="outputText" placeholder="Output Text...">
-  </div>
-</form>
+<div class="col-md-4">
+  <form (ngSubmit)="encrypt(form.value)" #form="ngForm" autocomplete="off">
+    <div class="form-group">
+      <label for="inputText">Input Text (English lowercase only):</label>
+      <input type="text" class="form-control" [(ngModel)]="inputText" name="inputText" id="inputText" pattern="[a-z]" placeholder="Input Text...">
+    </div>
+    <div class="form-group">
+      <label for="shift">Shift (0-26):</label>
+      <input type="number" class="form-control" [(ngModel)]="shift" name="shift" id="shift" placeholder="Shift..." min="0" max="26">
+    </div>
+    <button type="submit" class="btn btn-primary form-group">Encrypt</button>
+    <div class="form-group">
+      <label for="outputText">Output Text:</label>
+      <input type="text" class="form-control" [(ngModel)]="outputText" name="outputText" id="outputText" placeholder="Output Text...">
+    </div>
+  </form>
+</div>
 
 <router-outlet></router-outlet>
